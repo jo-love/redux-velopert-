@@ -1,10 +1,14 @@
 import React from "react";
-import Counter from "./components/Counter";
+import CounterContainer from "./containers/CounterContainer";
+import TodosContainer from "./containers/TodosContainer";
 
 function App() {
   return (
     <div>
-      <Counter number={0} />
+      <CounterContainer />
+      <hr />
+      <TodosContainer /> 
+      {/* Todo 컴포넌트를 TodosContainer로 교체 */}
     </div>
   );
 }
