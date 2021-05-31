@@ -6,24 +6,25 @@ import Todos from "../components/Todos";
 const TodosContainer = ({
   input,
   todos,
-  onChangeInput,
-  onInsert,
-  onToggle,
-  onRemove,
+  changeInput,
+  insert,
+  toggle,
+  remove,
 }) => {
   return (
     <Todos
       input={input}
       todos={todos}
-      onChangeInput={onChangeInput}
-      onInsert={onInsert}
-      onToggle={onToggle}
-      onRemove={onRemove}
+      onChangeInput={changeInput}
+      onInsert={insert}
+      onToggle={toggle}
+      onRemove={remove}
     ></Todos>
   );
 };
 
 export default connect(
+    //비구조화 할당으로 state.todos.input 가쟈오기
   ({ todos }) => ({
     input: todos.input,
     todos: todos.todos,

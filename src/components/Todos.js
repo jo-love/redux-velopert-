@@ -23,6 +23,7 @@ function Todos({ input, todos, onChangeInput, onInsert, onToggle, onRemove }) {
     onInsert(input);
     onChangeInput("");
   };
+  
   const onChanage = (e) => onChangeInput(e.target.value);
   return (
     <div>
