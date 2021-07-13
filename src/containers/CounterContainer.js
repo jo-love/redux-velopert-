@@ -1,11 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { increase, decrease } from "../modules/counter"; //액션함수 불러오기
+import { increaseAsync, decreaseAsync } from "../modules/counter"; //액션함수 불러오기
 import Counter from "../components/Counter"; // 연결할 ui 코드 부분 가져오기
 
-const CounterContainer = ({ number, increase, decrease }) => {
+const CounterContainer = ({ number, increaseAsync, decreaseAsync }) => {
   return (
-    <Counter number={number} onIncrease={increase} onDecrease={decrease} />
+    <Counter
+      number={number}
+      onIncrease={increaseAsync}
+      onDecrease={decreaseAsync}
+    />
   );
 };
 
@@ -23,7 +27,7 @@ const CounterContainer = ({ number, increase, decrease }) => {
 // export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
 
 // 2.mapStateToProps, mapDispatchToProps없이 익명 함수 사용해서 connect 함수 만들기
-export default connect((state) => ({ number: state.counter.number }), {
-  increase,
-  decrease,
+export default connect((state) => ({ number: state.counter }), {
+  increaseAsync,
+  decreaseAsync,
 })(CounterContainer);
